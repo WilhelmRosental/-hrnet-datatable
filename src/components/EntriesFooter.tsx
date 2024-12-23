@@ -32,7 +32,7 @@ const NavButton = styled.button`
 `;
 
 interface PageButtonProps {
-  $isActive: boolean; // Notez le $ préfixe
+  $isActive: boolean;
 }
 
 const PageButton = styled.button<PageButtonProps>`
@@ -43,13 +43,19 @@ const PageButton = styled.button<PageButtonProps>`
   background-color: ${(props) => (props.$isActive ? "#dfdfdf" : "transparent")};
 `;
 
+/**
+ * Composant gérant l'affichage des entrées visibles et la navigation entre les pages d'un tableau.
+ * @param {string} entries - Nombre de lignes affichées par page.
+ * @param {number} page - Page courante.
+ * @param {number} total - Nombre total d'entrées.
+ * @param {(value: number) => void} onChangePage - Fonction de rappel pour changer de page.
+ */
 export default function EntriesFooter({
   entries,
   page,
   total,
   onChangePage,
 }: Readonly<IEntriesFooter>) {
-  // States
   const [startEntries, setStartEntries] = useState<number>();
   const [endEntries, setEndEntries] = useState<number>();
   const [totalEntries, setTotalEntries] = useState<number>();
@@ -105,7 +111,7 @@ export default function EntriesFooter({
                   return (
                     <PageButton
                       key={index}
-                      $isActive={true} // Notez le $ préfixe
+                      $isActive={true}
                       onClick={() => onChangePage(page)}
                     >
                       {page}
@@ -117,7 +123,7 @@ export default function EntriesFooter({
                   return (
                     <PageButton
                       key={index}
-                      $isActive={false} // Notez le $ préfixe
+                      $isActive={false}
                       onClick={() => onChangePage(page)}
                     >
                       {page}

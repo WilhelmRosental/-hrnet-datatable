@@ -26,6 +26,10 @@ const EntriesSelect = styled.select`
   }
 `;
 
+/**
+ * Composant gérant la sélection du nombre d'entrées visibles dans un tableau.
+ * @param {(value: string) => void} onEntriesChange - Fonction de rappel appelée lors du changement de sélection.
+ */
 export default function Entries({ onEntriesChange }: Readonly<IEntriesProps>) {
   const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
     onEntriesChange(e.target.value);

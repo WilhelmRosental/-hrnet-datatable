@@ -50,6 +50,18 @@ export interface IDataTableProps<T extends object> {
   stylePage?: ElementType;
 }
 
+/**
+ * Composant principal d'affichage de données sous forme de tableau.
+ * Peut inclure une barre de recherche, un tri et la sélection du nombre d'entrées par page.
+ * @template T - Type générique représentant la structure des données.
+ * @param {T[]} data - Tableau de données à afficher.
+ * @param {string} [title] - Titre du tableau.
+ * @param {string[]} [columnOrder] - Ordre personnalisé des colonnes.
+ * @param {string[]} [columnTitle] - Labels personnalisés des colonnes.
+ * @param {boolean} [entries] - Affiche ou non la sélection du nombre d'entrées.
+ * @param {boolean} [sort] - Active ou non la fonctionnalité de tri.
+ * @param {boolean} [searchBar] - Active ou non la fonctionnalité de recherche.
+ */
 export function DataTable<T extends object>({
   data,
   title,

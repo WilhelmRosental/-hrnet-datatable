@@ -1,6 +1,6 @@
 {
   "name": "hrnet-datatable-styled-components",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "DataTable for HRnet",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -12,7 +12,12 @@
   "scripts": {
     "build": "tsc"
   },
-  "keywords": [],
+  "keywords": [
+    "hrnet",
+    "datatable",
+    "styled-components",
+    "react"
+  ],
   "author": "wilhelm-rosental",
   "license": "MIT",
   "publishConfig": {

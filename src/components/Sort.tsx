@@ -11,7 +11,7 @@ interface IFilterProps<T extends object> {
 }
 
 interface SortableThProps {
-  $isActive: boolean; // Notez le $ préfixe
+  $isActive: boolean;
 }
 
 const SortableTh = styled.th<SortableThProps>`
@@ -25,6 +25,16 @@ const SortableTh = styled.th<SortableThProps>`
   }
 `;
 
+/**
+ * Composant gérant le tri d'une colonne d'un tableau de données.
+ * @template T - Type générique représentant la structure des données.
+ * @param {T[]} data - Données courantes affichées.
+ * @param {T[]} originData - Données d'origine avant filtrage.
+ * @param {(value: T[]) => void} onChangeData - Fonction de rappel pour renvoyer les données triées.
+ * @param {string} element - Nom d'affichage de la colonne.
+ * @param {number} keyIndex - Index de la colonne.
+ * @param {string[]} dataColumn - Tableau des clés de colonnes.
+ */
 export default function Sort<T extends object>({
   data,
   originData,
@@ -96,7 +106,7 @@ export default function Sort<T extends object>({
 
   return (
     <SortableTh
-      $isActive={sortOrder !== "none"} // Notez le $ préfixe
+      $isActive={sortOrder !== "none"}
       key={keyIndex}
       onClick={(e) => clickForFilter(e)}
     >

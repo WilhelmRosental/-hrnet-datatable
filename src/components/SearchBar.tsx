@@ -25,6 +25,12 @@ const SearchInput = styled.input`
   }
 `;
 
+/**
+ * Composant de barre de recherche qui filtre un tableau de données en fonction de la valeur saisie.
+ * @template T - Type générique représentant la structure des données.
+ * @param {T[]} data - Tableau de données source.
+ * @param {(value: T[]) => void} onChangeData - Fonction de rappel pour renvoyer le tableau filtré.
+ */
 export default function SearchBar<T extends object>({
   data,
   onChangeData,
